@@ -4,9 +4,7 @@ import resume from "../assets/resume.jpg"
 const Resume = () => {
     return (
         <>
-            <Container classname="resume-container">
-                <img src={resume} alt="An image of my resume." />
-            </Container>
+            <img src={resume} alt="An image of my resume." className="resume"/>
         </>
     )
 }

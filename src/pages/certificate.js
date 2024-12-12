@@ -4,9 +4,7 @@ import certificate from "../assets/certificate.jpg"
 const Certificate = () => {
     return (
         <>
-            <Container classname="certificate-container">
-                <img src={certificate} alt="An image of my certificate." />
-            </Container>
+                <img src={certificate} alt="An image of my certificate." className="certificate" />
         </>
     )
 }

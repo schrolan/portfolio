@@ -8,9 +8,9 @@ import Resume from './pages/resume'
 import Projects from './pages/projects'
 import Certificate from './pages/certificate'
 import Contact from './pages/contact'
-import './index.css'; 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'; 
 
 function App () {
   return (
