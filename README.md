@@ -1,3 +1,5 @@
+deployed site http://3.147.77.74:3002/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
