@@ -80,6 +80,12 @@ p {
   margin-left: 20px;
 }
 
+.previous-work-wrapper {
+  display: grid;
+  grid-template-columns: 550px 550px;
+  column-gap: 150px;
+}
+
 .float-bottom-right, .float-bottom-center {
   margin: 0% 5% 0%;
   flex: 1 0 0;
