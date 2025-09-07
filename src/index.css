@@ -11,7 +11,7 @@ body {
 
 .header {
   padding: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Georgia', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: #2cd9df;
   color: #ffffff;
   box-shadow: 10px 10px black;
@@ -20,6 +20,7 @@ body {
   margin-left: 30px;
   margin-right: 30px;
   text-decoration: none;
+  border: solid;
 }
 
 .header h1 {
@@ -35,7 +36,7 @@ body {
   padding-top: 15px;
   margin-right: 20px;
   float: right;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
   font-size: 20px;
 }
 
@@ -79,7 +80,7 @@ p {
   margin-left: 20px;
 }
 
-.float-bottom-right, .float-bottom-center, .float-bottom-left {
+.float-bottom-right, .float-bottom-center {
   margin: 0% 5% 0%;
   flex: 1 0 0;
   padding: 0px;
@@ -95,71 +96,48 @@ p {
   margin-bottom: 50px;
   padding: 50px;
   height: 150px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #da83f0;
   color: #ffffff;
+  border: solid;
 }
 
 .about-me-1{
   margin-bottom: 50px;
   padding: 50px;
   height: 400px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #b4b10d;
   color: #ffffff;
+  border: solid;
 }
 
-.about-me-2{
+.previous-work-title {
   margin-bottom: 50px;
   padding: 50px;
-  height: 375px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #e55f4e;
+  height: 150px;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #f08383;
   color: #ffffff;
+  border: solid;
 }
 
-.about-me-3{
+.previous-work, .previous-work-2 {
   margin-bottom: 50px;
   padding: 50px;
-  height: 675px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #3fb5c5;
-  color: #ffffff;
-}
-
-.about-me-4{
-  margin-bottom: 50px;
-  padding: 50px;
-  height: 500px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #27ba2c;
-  color: #ffffff;
-}
-
-.about-me-5{
-  margin-bottom: 50px;
-  padding: 50px;
-  height: 400px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #9d2fcd;
-  color: #ffffff;
+  height: 600px;
+  width: 550px;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: solid;
 }
 
 .previous-work {
-  margin-bottom: 50px;
-  padding: 50px;
-  height: 450px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #b4b643;
   color: #ffffff;
 }
 
 .previous-work-2 {
-  margin-bottom: 50px;
-  padding: 50px;
-  height: 450px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #90375e;
+  background-color: #9f3e68;
   color: #ffffff;
 }
 
@@ -167,22 +145,34 @@ p {
   margin-bottom: 50px;
   padding: 50px;
   height: 150px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #11b06e;
   color: #ffffff;
+  border: solid;
+}
+
+.contact-title {
+  margin-bottom: 50px;
+  padding: 50px;
+  height: 150px;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #ca5710;
+  color: #ffffff;
+  border: solid;
 }
 
 .contact-info {
   margin-bottom: 50px;
   padding: 50px;
-  height: 300px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 250px;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #ca8910;
   color: #ffffff;
   font-size: 20px;
+  border: solid;
 }
 
-.contact-info, .previous-work, .previous-work-2, .previous-work-3, .about-me, .about-me-1, .about-me-2, .about-me-3, .about-me-4, .about-me-5 {
+.contact-info, .previous-work-title, .previous-work, .previous-work-2, .previous-work-3, .about-me, .about-me-1, .about-me-2, .about-me-3, .about-me-4, .about-me-5 {
   box-shadow: 10px 10px black;
 }
 
@@ -191,24 +181,15 @@ p {
 }
 
 .previous-work img, .previous-work-2 img {
-  max-height: 200px;
+  max-height: 175px;
+  border: solid, black;
 }
 
 .contact-info img {
   max-height: 200px;
 }
 
-.about-me h2 {
-  margin-bottom: 20px;
-  font-size: 36px;
-}
-
-.previous-work h2 {
-  margin-bottom: 20px;
-  font-size: 36px;
-}
-
-.contact-info h2 {
+.about-me h2, .previous-work h2, .contact-info h2 {
   margin-bottom: 20px;
   font-size: 36px;
 }
@@ -216,7 +197,7 @@ p {
 .footer {
   padding: 30px;
   clear: both;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Georgia', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
 
@@ -231,3 +212,33 @@ p {
 .resume {
   padding-left: 17%;
 }
+
+.float-bottom-left {
+  display: grid;
+  border: solid;
+}
+
+.about-me-text, .previous-work-text, .previous-work-2-text, .previous-work-3-text, .contact-info-text {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: solid;
+}
+
+.about-me-text, .previous-work-text {
+  background-color: #52501d;
+}
+
+.previous-work-2-text {
+  background-color: rgba(5, 1, 5, 0.256);
+}
+
+.previous-work-3-text {
+  background-color: #08603b;
+}
+
+.contact-info-text {
+  background-color: #ae4b0e;
+}
+

@@ -31,7 +31,7 @@ const Header = () => {
                                 </Link>
                             </a>                           
                         </li>
-                        <li>
+                        {/* <li>
                             <a type="submit">
                                 <Link to={"/resume"}>
                                     <a className="nav-link">
@@ -39,7 +39,7 @@ const Header = () => {
                                     </a>
                                 </Link>
                             </a>
-                        </li>
+                        </li> */}
                         <li>
                             <a type="submit">
                                 <Link to={"/contact"}>
