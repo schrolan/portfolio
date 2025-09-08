@@ -24,9 +24,9 @@ const Projects = () => {
                         </h3>
                             <img src={handmeabook} alt="a screenshot of my project hand me a book." className="float-bottom-left"/>
                     </div>
-                </div>
-                <div className="previous-work-3">
-                    <h2 className="previous-work-3-text"><a href="https://github.com/schrolan?tab=repositories" target="_blank">Here is my github repositories page.</a></h2>
+                    <div className="previous-work-3">
+                        <h2 className="previous-work-3-text"><a href="https://github.com/schrolan?tab=repositories" target="_blank">Here is my github repositories page.</a></h2>
+                    </div>
                 </div>
 
             </Container>

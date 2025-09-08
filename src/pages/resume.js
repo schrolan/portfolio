@@ -1,4 +1,3 @@
-import Container from "../components/container";
 import resume from "../assets/resume.jpg"
 
 const Resume = () => {

@@ -82,7 +82,7 @@ p {
 
 .previous-work-wrapper {
   display: grid;
-  grid-template-columns: 550px 550px;
+  grid-template-columns: 25% 25% 25%;
   column-gap: 150px;
 }
 
@@ -109,9 +109,8 @@ p {
 }
 
 .about-me-1{
-  margin-bottom: 50px;
-  padding: 50px;
-  height: 400px;
+  padding: 2.5%;
+  height: 10%;
   font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #b4b10d;
   color: #ffffff;
@@ -128,10 +127,10 @@ p {
   border: solid;
 }
 
-.previous-work, .previous-work-2 {
+.previous-work, .previous-work-2, .previous-work-3 {
   margin-bottom: 50px;
-  padding: 50px;
-  height: 600px;
+  padding: 10%;
+  height: 95%;
   width: 550px;
   font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border: solid;
@@ -148,13 +147,8 @@ p {
 }
 
 .previous-work-3 {
-  margin-bottom: 50px;
-  padding: 50px;
-  height: 150px;
-  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #11b06e;
   color: #ffffff;
-  border: solid;
 }
 
 .contact-title {
@@ -169,7 +163,7 @@ p {
 
 .contact-info {
   margin-bottom: 50px;
-  padding: 50px;
+  padding: 2.5%;
   height: 250px;
   font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #ca8910;
@@ -224,16 +218,19 @@ p {
   border: solid;
 }
 
-.about-me-text, .previous-work-text, .previous-work-2-text, .previous-work-3-text, .contact-info-text {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: solid;
+.about-me-text, .previous-work-text, .previous-work-2-text, .previous-work-3-text {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .about-me-text, .previous-work-text {
   background-color: #52501d;
+}
+
+.about-me-text {
+  line-height: 1.5;
 }
 
 .previous-work-2-text {
@@ -245,6 +242,19 @@ p {
 }
 
 .contact-info-text {
+  padding: 1%;
   background-color: #ae4b0e;
 }
 
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow-y: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
