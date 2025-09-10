@@ -1,7 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/header';
 import Container from './components/container';
-import Footer from './components/footer';
 import Screen from './components/screen';
 import Carousel from './components/carousel';
 
@@ -19,7 +18,6 @@ function App() {
           <Carousel />
         </Screen>
       </Container>
-      <Footer />
     </BrowserRouter>
   );
 }
