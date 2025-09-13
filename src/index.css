@@ -50,12 +50,13 @@ body {
 }
 
 .header div ul li a {
-  padding: 5px 10px;
-  border-radius: 8px;
+  padding: 0;
 }
 
 .header div ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  color: gold;
+  transform: scale(1.1);
 }
 
 a {
@@ -401,8 +402,22 @@ p {
     padding: 20px;
   }
 
+  /* ✅ Skills responsiveness */
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+
+  .skills, .skills-2 {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
   .about-me,
   .previous-work-title,
+  .skills-title,
   .contact-title,
   .contact-info {
     padding: 20px;
@@ -411,6 +426,8 @@ p {
 
   .about-me h2,
   .previous-work h2,
+  .skills h2,
+  .skills-2 h2,
   .contact-info h2 {
     font-size: 24px;
   }
