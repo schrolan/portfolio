@@ -31,15 +31,15 @@ const Header = () => {
                                 </Link>
                             </a>                           
                         </li>
-                        {/* <li>
+                        <li>
                             <a type="submit">
-                                <Link to={"/resume"}>
+                                <Link to={"/skills"}>
                                     <a className="nav-link">
-                                        <h2 className="custom-font">Resume</h2>
+                                        <h2 className="custom-font">Skills</h2>
                                     </a>
                                 </Link>
                             </a>
-                        </li> */}
+                        </li>
                         <li>
                             <a type="submit">
                                 <Link to={"/contact"}>

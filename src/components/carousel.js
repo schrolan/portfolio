@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import About from "../pages/aboutMe";
 import Projects from "../pages/projects";
 import Certificate from "../pages/certificate";
+import Skills from "../pages/skills";
 import Contact from "../pages/contact";
 
 import "../index.css";
@@ -13,6 +14,7 @@ const slides = [
   { path: "/", component: <About /> },
   { path: "/projects", component: <Projects /> },
   { path: "/certificate", component: <Certificate /> },
+  { path: "/skills", component: <Skills /> },
   { path: "/contact", component: <Contact /> }
 ];
 
@@ -35,6 +37,15 @@ const Carousel = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const currentIndex = slides.findIndex(
+      (slide) => slide.path === location.pathname
+    );
+    if (currentIndex !== -1 && sliderRef.current) {
+      sliderRef.current.slickGoTo(currentIndex);
+    }
+  }, [location.pathname]);
 
   return (
     <div className="carousel-container">

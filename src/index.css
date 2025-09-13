@@ -95,12 +95,6 @@ p {
   margin-left: 20px;
 }
 
-.previous-work-wrapper {
-  display: grid;
-  grid-template-columns: 14% 14% 14%;
-  column-gap: 20%;
-}
-
 .float-bottom-right, 
 .float-bottom-center {
   margin: 0% 5% 0%;
@@ -143,6 +137,12 @@ p {
   border: solid;
 }
 
+.previous-work-wrapper {
+  display: grid;
+  grid-template-columns: 14% 14% 14%;
+  column-gap: 20%;
+}
+
 .previous-work, 
 .previous-work-2, 
 .previous-work-3 {
@@ -169,6 +169,42 @@ p {
   color: #ffffff;
 }
 
+.skills-title {
+  margin-bottom: 50px;
+  padding: 50px;
+  height: 150px;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #bdbf2e;
+  color: #ffffff;
+  border: solid;
+}
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: 20% 20%;
+  column-gap: 35%;
+}
+
+.skills,
+.skills-2 {
+  margin-bottom: 50px;
+  padding: 10%;
+  height: 90%;
+  width: 225%;
+  font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: solid;
+}
+
+.skills {
+  background-color: #2cd9df;
+  color: #ffffff;
+}
+
+.skills-2 {
+  background-color: #ca8910;
+  color: #ffffff;
+}
+
 .contact-title {
   margin-bottom: 50px;
   padding: 50px;
@@ -190,17 +226,19 @@ p {
   border: solid;
 }
 
-.contact-info, 
+.contact-info,
+.contact-title, 
 .previous-work-title, 
 .previous-work, 
 .previous-work-2, 
 .previous-work-3, 
 .about-me, 
-.about-me-1, 
-.about-me-2, 
-.about-me-3, 
-.about-me-4, 
-.about-me-5 {
+.about-me-1,
+.skills-title,
+.skills,
+.skills-2,
+.certificate 
+ {
   box-shadow: 10px 10px black;
 }
 
@@ -223,17 +261,6 @@ p {
 .contact-info h2 {
   margin-bottom: 20px;
   font-size: 36px;
-}
-
-.footer {
-  padding: 30px;
-  clear: both;
-  font-family: 'Georgia', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-align: center;
-}
-
-.footer h2 {
-  font-size: 20px;
 }
 
 .certificate {
@@ -277,6 +304,9 @@ p {
 .about-me:hover, 
 .about-me-1:hover,
 .certificate:hover,
+.skills-title:hover,
+.skills:hover,
+.skills-2:hover,
 .contact-title:hover, 
 .contact-info:hover {
   transform: translateY(-10px);
@@ -300,8 +330,15 @@ p {
 }
 
 .contact-info-text {
-  padding: 1%;
   background-color: #ae4b0e;
+}
+
+.skills-text {
+  background-color: #229fa3;
+}
+
+.skills-2-text {
+  background-color: #96650a;
 }
 
 .carousel-container {
