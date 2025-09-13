@@ -49,9 +49,24 @@ body {
   margin-left: 25px;
 }
 
+.header div ul li a {
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.header div ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 a {
-  color: #ffffff;
+  color: inherit;
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  color: gold; 
+  transform: scale(1.1);
 }
 
 p {
@@ -86,7 +101,8 @@ p {
   column-gap: 20%;
 }
 
-.float-bottom-right, .float-bottom-center {
+.float-bottom-right, 
+.float-bottom-center {
   margin: 0% 5% 0%;
   flex: 1 0 0;
   padding: 0px;
@@ -127,7 +143,9 @@ p {
   border: solid;
 }
 
-.previous-work, .previous-work-2, .previous-work-3 {
+.previous-work, 
+.previous-work-2, 
+.previous-work-3 {
   margin-bottom: 50px;
   padding: 10%;
   height: 90%;
@@ -172,7 +190,17 @@ p {
   border: solid;
 }
 
-.contact-info, .previous-work-title, .previous-work, .previous-work-2, .previous-work-3, .about-me, .about-me-1, .about-me-2, .about-me-3, .about-me-4, .about-me-5 {
+.contact-info, 
+.previous-work-title, 
+.previous-work, 
+.previous-work-2, 
+.previous-work-3, 
+.about-me, 
+.about-me-1, 
+.about-me-2, 
+.about-me-3, 
+.about-me-4, 
+.about-me-5 {
   box-shadow: 10px 10px black;
 }
 
@@ -180,7 +208,8 @@ p {
   max-height: 200px;
 }
 
-.previous-work img, .previous-work-2 img {
+.previous-work img, 
+.previous-work-2 img {
   max-height: 175px;
   border: solid, black;
 }
@@ -189,7 +218,9 @@ p {
   max-height: 200px;
 }
 
-.about-me h2, .previous-work h2, .contact-info h2 {
+.about-me h2, 
+.previous-work h2, 
+.contact-info h2 {
   margin-bottom: 20px;
   font-size: 36px;
 }
@@ -219,11 +250,37 @@ p {
   border: solid;
 }
 
-.about-me-text, .previous-work-text, .previous-work-2-text, .previous-work-3-text {
+.about-me-text, 
+.previous-work-text, 
+.previous-work-2-text, 
+.previous-work-3-text {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
+}
+
+.previous-work, 
+.previous-work-2, 
+.previous-work-3, 
+.about-me, 
+.about-me-1, 
+.contact-info {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.previous-work-title:hover,
+.previous-work:hover, 
+.previous-work-2:hover, 
+.previous-work-3:hover, 
+.about-me:hover, 
+.about-me-1:hover,
+.certificate:hover,
+.contact-title:hover, 
+.contact-info:hover {
+  transform: translateY(-10px);
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
 }
 
 .about-me-text, .previous-work-text {
@@ -296,7 +353,7 @@ p {
   }
 
   .previous-work-wrapper {
-    grid-template-columns: 1fr; /* stack instead of side-by-side */
+    grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 20px;
   }
