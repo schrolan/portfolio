@@ -1,3 +1,7 @@
+#AWS deployed site
+
+http://18.220.212.229:3002/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
