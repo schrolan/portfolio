@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import About from "../pages/aboutMe";
@@ -18,61 +18,71 @@ const slides = [
 ];
 
 const Carousel = ({ sliderRef }) => {
-  const slideRefs = useRef([]);
-  const touchStartY = useRef(0);
-  const touchCurrentY = useRef(0);
   const isScrolling = useRef(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+  const touchStart = useRef(0);
 
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
+    vertical: !isMobile,
+    verticalSwiping: !isMobile,
     adaptiveHeight: false,
+    swipe: true,
     afterChange: () => {
       isScrolling.current = false;
     },
   };
 
   useEffect(() => {
-  let startY = 0;
-  let endY = 0;
+    const handleResize = () => setIsMobile(window.innerWidth <= 480);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  const handleTouchStart = (e) => {
-    startY = e.touches[0].clientY;
-  };
-
-  const handleTouchEnd = (e) => {
-    endY = e.changedTouches[0].clientY;
-    if (isScrolling.current || !sliderRef.current) return;
-    const delta = startY - endY;
-    if (delta > 50) {
-      sliderRef.current.slickNext();
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (isScrolling.current || !sliderRef.current) return;
+      if ((!isMobile && e.deltaY > 0) || (isMobile && e.deltaX > 0)) sliderRef.current.slickNext();
+      else if ((!isMobile && e.deltaY < 0) || (isMobile && e.deltaX < 0)) sliderRef.current.slickPrev();
       isScrolling.current = true;
-    } else if (delta < -50) {
-      sliderRef.current.slickPrev();
+    };
+    window.addEventListener("wheel", handleWheel, { passive: true });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, [sliderRef, isMobile]);
+
+  useEffect(() => {
+    const handleTouchStart = (e) => {
+      touchStart.current = isMobile ? e.touches[0].clientX : e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e) => {
+      if (isScrolling.current || !sliderRef.current) return;
+      const touchEnd = isMobile ? e.changedTouches[0].clientX : e.changedTouches[0].clientY;
+      const delta = touchStart.current - touchEnd;
+      if (delta > 50) sliderRef.current.slickNext();
+      else if (delta < -50) sliderRef.current.slickPrev();
       isScrolling.current = true;
-    }
-    setTimeout(() => (isScrolling.current = false), 800);
-  };
+      setTimeout(() => (isScrolling.current = false), 800);
+    };
 
-  window.addEventListener("touchstart", handleTouchStart, { passive: true });
-  window.addEventListener("touchend", handleTouchEnd, { passive: true });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
-  return () => {
-    window.removeEventListener("touchstart", handleTouchStart);
-    window.removeEventListener("touchend", handleTouchEnd);
-  };
-}, [sliderRef]);
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [sliderRef, isMobile]);
 
   return (
     <div className="carousel-container">
       <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, i) => (
-          <div key={i} className="carousel-slide" ref={(el) => (slideRefs.current[i] = el)}>
+          <div key={i} className="carousel-slide">
             <div className="slide-content">{slide.component}</div>
           </div>
         ))}
