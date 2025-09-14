@@ -1,4 +1,3 @@
-/* ========== GLOBAL ========== */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -33,7 +32,6 @@ img {
   height: auto;
 }
 
-/* ========== HEADER ========== */
 .header {
   position: fixed;
   top: 0;
@@ -92,7 +90,6 @@ img {
   transform: scale(1.1);
 }
 
-/* Hamburger menu for mobile */
 .header .hamburger {
   display: none;
   flex-direction: column;
@@ -109,11 +106,22 @@ img {
 .header nav ul.mobile-menu {
   display: none;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 10px;
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  background-color: #2cd9df;
+  border: solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  z-index: 2000;
 }
 
-/* ========== CAROUSEL ========== */
+.header nav ul.mobile-menu.active {
+  display: flex;
+}
+
 .carousel-container {
   height: 100vh;
   margin-top: 150px;
@@ -136,7 +144,6 @@ img {
   padding: 20px;
 }
 
-/* ========== SECTIONS ========== */
 .about-me,
 .about-me-1,
 .previous-work,
@@ -181,7 +188,6 @@ img {
 .certificate { padding-left: 10%; height: auto; }
 .resume { padding-left: 17%; }
 
-/* Section content styles */
 .about-me h2, 
 .previous-work h2, 
 .skills h2,
@@ -196,7 +202,6 @@ img {
 .skills-2-text { background-color: #96650a; padding: 5%; }
 .contact-info-text { background-color: #ae4b0e; padding: 5%; }
 
-/* Interactions */
 .previous-work, 
 .previous-work-2, 
 .previous-work-3, 
@@ -224,7 +229,6 @@ img {
   box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Hover for links in previous work */
 .previous-work a,
 .previous-work-2 a,
 .previous-work-3 a {
@@ -240,18 +244,19 @@ img {
   transform: scale(1.1);
 }
 
-/* ========== MEDIA QUERIES ========== */
 @media screen and (max-width: 480px) {
   .header { flex-direction: row; justify-content: space-between; }
   .header h1 { font-size: 28px; margin-bottom: 0; }
   
-  .header nav ul { display: none; flex-direction: column; gap: 10px; }
+  .header nav ul { display: none; flex-direction: column; gap: 10px; position: static; background: none; border: none; padding: 0; box-shadow: none; }
   .header .hamburger { display: flex; }
   .header nav ul.mobile-menu.active { display: flex; }
 
   .hero { height: 300px; }
 
   .content { width: 100%; margin: 0; padding: 10px; }
+
+  .carousel-container { height: auto; margin-top: 100px; }
 
   .previous-work-wrapper,
   .skills-wrapper {
