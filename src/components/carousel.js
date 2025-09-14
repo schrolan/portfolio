@@ -20,6 +20,7 @@ const slides = [
 const Carousel = ({ sliderRef }) => {
   const slideRefs = useRef([]);
   const touchStartY = useRef(0);
+  const touchCurrentY = useRef(0);
   const isScrolling = useRef(false);
 
   const settings = {
@@ -37,42 +38,35 @@ const Carousel = ({ sliderRef }) => {
   };
 
   useEffect(() => {
-    const handleTouchStart = (e) => {
-      touchStartY.current = e.touches[0].clientY;
-    };
+  let startY = 0;
+  let endY = 0;
 
-    const handleTouchEnd = (e) => {
-      const touchEndY = e.changedTouches[0].clientY;
-      const deltaY = touchStartY.current - touchEndY;
-      if (isScrolling.current || !sliderRef.current) return;
+  const handleTouchStart = (e) => {
+    startY = e.touches[0].clientY;
+  };
 
-      const currentSlide = sliderRef.current.innerSlider.state.currentSlide;
-      const slideEl = slideRefs.current[currentSlide];
-      if (!slideEl) return;
+  const handleTouchEnd = (e) => {
+    endY = e.changedTouches[0].clientY;
+    if (isScrolling.current || !sliderRef.current) return;
+    const delta = startY - endY;
+    if (delta > 50) {
+      sliderRef.current.slickNext();
+      isScrolling.current = true;
+    } else if (delta < -50) {
+      sliderRef.current.slickPrev();
+      isScrolling.current = true;
+    }
+    setTimeout(() => (isScrolling.current = false), 800);
+  };
 
-      const scrollTop = slideEl.scrollTop;
-      const scrollHeight = slideEl.scrollHeight;
-      const clientHeight = slideEl.clientHeight;
+  window.addEventListener("touchstart", handleTouchStart, { passive: true });
+  window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
-      if (deltaY > 30 && scrollTop + clientHeight >= scrollHeight) {
-        sliderRef.current.slickNext();
-        isScrolling.current = true;
-      } else if (deltaY < -30 && scrollTop <= 0) {
-        sliderRef.current.slickPrev();
-        isScrolling.current = true;
-      }
-
-      setTimeout(() => (isScrolling.current = false), 800);
-    };
-
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-    return () => {
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, [sliderRef]);
+  return () => {
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchend", handleTouchEnd);
+  };
+}, [sliderRef]);
 
   return (
     <div className="carousel-container">

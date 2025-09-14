@@ -6,6 +6,7 @@
 
 html, body {
   height: 100%;
+  overflow: hidden;
   background-color: #d9dcd6;
   background-image: url("./assets/90s_style_background_with_pastel_geometric_shapes_generated.jpg");
   font-family: 'Georgia', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -138,7 +139,7 @@ img {
   display: none;
 }
 
-.slide-content {
+.slide-inner {
   width: 100%;
   padding: 20px;
 }
@@ -182,7 +183,7 @@ img {
 .skills-2 { background-color: #ca8910; }
 
 .contact-title { margin-bottom: 50px; padding: 50px; height: 150px; background-color: #ca5710; }
-.contact-info { margin-bottom: 50px; padding: 2.5%; font-size: 20px; background-color: #ca8910; }
+.contact-info { margin-bottom: 50px; padding: 2.5%; height: 250px; font-size: 20px; background-color: #ca8910; }
 
 .certificate { padding-left: 10%; height: auto; }
 .resume { padding-left: 17%; }
@@ -251,7 +252,16 @@ img {
   .header .hamburger { display: flex; }
   .header nav ul.mobile-menu.active { display: flex; }
 
-  .carousel-container { height: 100vh; margin-top: 100px; }
+  .hero { height: 300px; }
+
+  .content { width: 100%; margin: 0; padding: 10px; }
+
+  .carousel-container { height: auto; margin-top: 100px; }
+
+  .carousel-slide {
+    overflow-y: hidden;
+    height: 100vh;
+  }
 
   .previous-work-wrapper,
   .skills-wrapper {
@@ -261,8 +271,7 @@ img {
   }
 
   .previous-work, .previous-work-2, .previous-work-3,
-  .skills, .skills-2,
-  .carousel-slide {
+  .skills, .skills-2 {
     width: 100%;
     height: auto;
     padding: 20px;
