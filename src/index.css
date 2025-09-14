@@ -257,9 +257,7 @@ img {
   .content { width: 100%; margin: 0; padding: 10px; }
 
   .carousel-slide {
-    height: 70vh;
-    overflow-y: scroll !important;
-    -webkit-overflow-scrolling: touch;
+    height: 50vh;
   }
   .carousel-slide::-webkit-scrollbar {
     width: 0px;
@@ -270,8 +268,9 @@ img {
     -ms-overflow-style: none;
   }
   .carousel-container {
-    height: auto !important;
+    height: 70vh;
     margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .previous-work-wrapper,
