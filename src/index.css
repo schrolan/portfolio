@@ -256,8 +256,21 @@ img {
 
   .content { width: 100%; margin: 0; padding: 10px; }
 
+  .carousel-slide {
+    height: 70vh;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel-slide::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  .carousel-slide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
   .carousel-container {
-    height: auto;
+    height: auto !important;
     margin-top: 100px;
   }
 
