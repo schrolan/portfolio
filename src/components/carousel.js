@@ -1,27 +1,21 @@
 import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
-import { useNavigate, useLocation } from "react-router-dom";
-
 import About from "../pages/aboutMe";
 import Projects from "../pages/projects";
 import Certificate from "../pages/certificate";
 import Skills from "../pages/skills";
 import Contact from "../pages/contact";
 
-import "../index.css";
-
 const slides = [
-  { path: "/", component: <About /> },
-  { path: "/projects", component: <Projects /> },
-  { path: "/certificate", component: <Certificate /> },
-  { path: "/skills", component: <Skills /> },
-  { path: "/contact", component: <Contact /> }
+  { component: <About /> },
+  { component: <Projects /> },
+  { component: <Certificate /> },
+  { component: <Skills /> },
+  { component: <Contact /> }
 ];
 
-const Carousel = () => {
-  const sliderRef = useRef(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+const Carousel = ({ sliderRef }) => {
+  const isScrolling = useRef(false);
 
   const settings = {
     dots: true,
@@ -29,23 +23,25 @@ const Carousel = () => {
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
-    afterChange: (current) => {
-      const newPath = slides[current].path;
-      if (newPath !== location.pathname) {
-        navigate(newPath);
-      }
-    }
+    vertical: true,
+    verticalSwiping: true,
+    adaptiveHeight: false,
+    afterChange: () => {
+      isScrolling.current = false;
+    },
   };
 
   useEffect(() => {
-    const currentIndex = slides.findIndex(
-      (slide) => slide.path === location.pathname
-    );
-    if (currentIndex !== -1 && sliderRef.current) {
-      sliderRef.current.slickGoTo(currentIndex);
-    }
-  }, [location.pathname]);
+    const handleWheel = (e) => {
+      if (isScrolling.current || !sliderRef.current) return;
+      if (e.deltaY > 0) sliderRef.current.slickNext();
+      else if (e.deltaY < 0) sliderRef.current.slickPrev();
+      isScrolling.current = true;
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: true });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, [sliderRef]);
 
   return (
     <div className="carousel-container">

@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+import { useRef } from 'react';
 import Header from './components/header';
 import Container from './components/container';
 import Screen from './components/screen';
@@ -10,12 +11,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 function App() {
+  const sliderRef = useRef(null);
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header sliderRef={sliderRef} />
       <Container>
         <Screen>
-          <Carousel />
+          <Carousel sliderRef={sliderRef} />
         </Screen>
       </Container>
     </BrowserRouter>
