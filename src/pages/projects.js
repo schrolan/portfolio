@@ -17,7 +17,7 @@ const Projects = () => {
                 <h5>GitHub repository where you can learn what technology was used to create the site.</h5>
               </a>
             </h5>
-            <a href="http://3.141.0.125:3000/" target="_blank" rel="noreferrer">
+            <a href="http://18.222.21.105:3000/" target="_blank" rel="noreferrer">
               <img src={mhw} alt="screenshot of my project react mhw companion" className="float-bottom-left" />
             </a>
           </div>
@@ -31,7 +31,7 @@ const Projects = () => {
                 <h5>GitHub repository where you can learn what technology was used to create the site.</h5>
               </a>
             </h5>
-            <a href="http://3.22.112.97/" target="_blank" rel="noreferrer">
+            <a href="http://3.144.161.54:3001/" target="_blank" rel="noreferrer">
               <img src={handmeabook} alt="screenshot of my project hand me a book" className="float-bottom-left" />
             </a>
           </div>
